@@ -16,8 +16,8 @@ IMAGE_INSTALL += " \
     apache2 \
     mod-wsgi \
     tzdata \
-    gateway-mgr \
-    cloud-mgr \
+    gateway-app \
+    gateway-device-manager \
     packagegroup-tools-bluetooth \
     python3-pybluez \
     python3-sqlalchemy \
@@ -31,6 +31,7 @@ IMAGE_INSTALL += " \
     bluepy \
     git \
     ble-usb \
+    libgpiod \
 "
 
 IMAGE_ROOTFS_SIZE = "65536"
@@ -45,7 +46,9 @@ EXTRA_USERS_PARAMS = " \
    
 
 change_mod() {
-	chmod -R 777 ${IMAGE_ROOTFS}/usr/share/apache2/default-site/htdocs/Gateway_Manager
+	chmod -R 777 ${IMAGE_ROOTFS}/usr/share/apache2/default-site/htdocs/gdm
+        chmod -R 777 ${IMAGE_ROOTFS}/usr/sbin/certUploads
+	chmod -R 777 ${IMAGE_ROOTFS}/usr/sbin
         ln -nsf /usr/share/zoneinfo/Asia/Kolkata ${IMAGE_ROOTFS}/etc/localtime   
 }
 

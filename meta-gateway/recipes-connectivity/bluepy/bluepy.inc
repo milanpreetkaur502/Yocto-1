@@ -3,6 +3,8 @@ LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=59e0d45ea684dda215889aa1b5acd001"
 HOMEPAGE = "https://github.com/IanHarvey/bluepy"
 
+SRCREV = "${AUTOREV}"
+
 SRC_URI = " \
     git://github.com/IanHarvey/bluepy.git;branch=master \
 "
